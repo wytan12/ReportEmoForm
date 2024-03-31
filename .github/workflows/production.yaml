@@ -20,6 +20,9 @@ jobs:
             - name: Install Vercel CLI
               run: npm install --global vercel
             
+            - name: Change to Angular Project Directory
+              run: cd ReportEmotionForm
+
             - name: Build Angular Project
               run: ng build 
 
