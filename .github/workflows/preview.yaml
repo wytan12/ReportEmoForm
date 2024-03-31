@@ -10,8 +10,8 @@ on:
     push:
         paths:
             - 'ReportEmotionForm/**'
-        # branches-ignore:
-        #     - main
+        branches-ignore:
+            - main
 
 jobs: 
     Deploy-Preview:
