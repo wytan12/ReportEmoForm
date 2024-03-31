@@ -23,11 +23,9 @@ jobs:
 
             - name: Install Vercel CLI
               run: npm install --global vercel
-              working-directory: ReportEmotionForm 
             
             - name: Install Angular CLI
               run: npm install -g @angular/cli
-              working-directory: ReportEmotionForm 
 
             - name: Build Angular Project
               run: |
