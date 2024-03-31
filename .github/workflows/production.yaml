@@ -21,7 +21,7 @@ jobs:
               run: npm install --global vercel
             
             - name: Build Angular Project
-              run: ng build --prod
+              run: ng build 
 
             - name: Pull Vercel Environment Information
               run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
