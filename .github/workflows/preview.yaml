@@ -8,6 +8,8 @@ env:
 # to trigger the workflow directly
 on:
     push:
+        paths:
+            - 'ReportEmotionForm/**'
         branches-ignore:
             - main
 

@@ -8,6 +8,8 @@ env:
 # to trigger the workflow directly
 on:
     push:
+        paths:
+            - 'ReportEmotionForm/**'
         branches:
             - main
 
@@ -20,8 +22,12 @@ jobs:
             - name: Install Vercel CLI
               run: npm install --global vercel
             
+            - name: Install Angular CLI
+              run: npm install -g @angular/cli
+
             - name: Build Angular Project
-              run: ng build 
+              run: ng build --prod
+              working-directory: ReportEmotionForm 
             
             - name: Pull Vercel Environment Information
               run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
