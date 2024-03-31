@@ -28,7 +28,9 @@ jobs:
               working-directory: ReportEmotionForm 
 
             - name: Build Angular Project
-              run: ng build --prod
+              run: |
+                npm install
+                ng build
               working-directory: ReportEmotionForm 
             
             - name: Pull Vercel Environment Information

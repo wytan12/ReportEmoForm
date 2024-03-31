@@ -17,10 +17,23 @@ jobs:
     Deploy-Preview:
         runs-on: ubuntu-latest
         steps: 
-            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v2
+              with:
+                node-version: '20'
 
             - name: Install Vercel CLI
               run: npm install --global vercel
+              working-directory: ReportEmotionForm 
+            
+            - name: Install Angular CLI
+              run: npm install -g @angular/cli
+              working-directory: ReportEmotionForm 
+
+            - name: Build Angular Project
+              run: |
+                npm install
+                ng build
+              working-directory: ReportEmotionForm 
 
             - name: Pull Vercel Environment Information
               run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
