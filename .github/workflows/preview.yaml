@@ -21,7 +21,7 @@ jobs:
               run: npm install --global vercel
 
             - name: Pull Vercel Environment Information
-              run: vercel ull --yes --preview --token=${{ secrets.VERCEL_TOKEN }}
+              run: vercel deploy --preview --token=${{ secrets.VERCEL_TOKEN }}
 
             - name: Build Project Artifacts
               run: vercel build --token=${{ secrets.VERCEL_TOKEN}}
